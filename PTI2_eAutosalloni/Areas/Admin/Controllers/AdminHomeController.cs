@@ -10,7 +10,7 @@ namespace PTI2_eAutosalloni.Areas.Admin.Controllers
     public class AdminHomeController : Controller
     {
         [Area("Admin")]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View();
