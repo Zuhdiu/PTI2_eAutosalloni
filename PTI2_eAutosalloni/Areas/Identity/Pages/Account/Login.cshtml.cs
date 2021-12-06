@@ -84,8 +84,21 @@ namespace PTI2_eAutosalloni.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    var user = await _signInManager.UserManager.FindByNameAsync(Input.Email);
+                    var userRole = await _userManager.IsInRoleAsync(user, "User");
+                    var adminRole = await _userManager.IsInRoleAsync(user, "Admin");
+
+                    if (userRole == true)
+                    {
+                        _logger.LogInformation("User logged in.");
+                        return LocalRedirect(returnUrl);
+                    }
+                    if (adminRole == true)
+                    {
+                        _logger.LogInformation("Admin logged in.");
+                        return Redirect("~/Admin");
+                    }
+                   
                 }
                 if (result.RequiresTwoFactor)
                 {
