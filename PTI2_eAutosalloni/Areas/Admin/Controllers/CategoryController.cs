@@ -11,6 +11,7 @@ using PTI2_eAutosalloni.Models;
 namespace PTI2_eAutosalloni.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    // [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService categoryService;

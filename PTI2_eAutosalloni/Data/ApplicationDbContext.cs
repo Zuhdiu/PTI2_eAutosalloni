@@ -17,5 +17,8 @@ namespace PTI2_eAutosalloni.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<VehicleImage> VehicleImages { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
+
     }
 }

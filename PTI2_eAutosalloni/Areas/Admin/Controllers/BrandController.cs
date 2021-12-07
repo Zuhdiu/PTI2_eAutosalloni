@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace PTI2_eAutosalloni.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    // [Authorize(Roles = "Admin")]
     public class BrandController : Controller
     {
         private readonly IBrandService _brandService;

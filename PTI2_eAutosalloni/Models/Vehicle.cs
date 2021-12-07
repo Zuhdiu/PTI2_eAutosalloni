@@ -13,7 +13,7 @@ namespace PTI2_eAutosalloni.Models
         public string Model { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int BrandID { get; set; }
+        public int BrandId { get; set; }
         public Brand Brand { get; set; }
         public string Description { get; set; }
         public string Engine { get; set; }
@@ -21,7 +21,7 @@ namespace PTI2_eAutosalloni.Models
         public string TransmissionType { get; set; }
         public DateTime Year { get; set; }
         public double Price { get; set; }
-        public int Bought { get; set; }
+        public int? Bought { get; set; }
         public int Quantity { get; set; }
     }
 }
