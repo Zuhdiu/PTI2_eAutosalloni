@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace PTI2_eAutosalloni.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+   // [Authorize(Roles = "Admin")]
     public class AdminHomeController : Controller
     {
-        [Area("Admin")]
-       // [Authorize(Roles = "Admin")]
+     
         public IActionResult Index()
         {
             return View();
