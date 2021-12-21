@@ -22,12 +22,8 @@ namespace PTI2_eAutosalloni.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult Dashboard()
-        {
             DashboardViewModel dashboard = new DashboardViewModel();
-            dashboard.vehicle_count= _context.Vehicles.Count();
+            dashboard.vehicle_count = _context.Vehicles.Count();
             dashboard.customer_count = _context.Customers.Count();
             dashboard.category_count = _context.Categories.Count();
             return View(dashboard);
