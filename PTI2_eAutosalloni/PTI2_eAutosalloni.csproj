@@ -679,6 +679,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\assets\fonts\flexslider-icon.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\js\custom.js" />
+    <None Include="wwwroot\assets\js\owl.js" />
     <None Include="wwwroot\bower_components\font-awesome\.gitignore" />
     <None Include="wwwroot\bower_components\font-awesome\.npmignore" />
     <None Include="wwwroot\bower_components\font-awesome\css\font-awesome.css.map" />
@@ -1500,6 +1505,49 @@
     <None Include="wwwroot\bower_components\raphael\raphael.no-deps.min.js" />
     <None Include="wwwroot\bower_components\raphael\webpack.config.js" />
     <None Include="wwwroot\bower_components\raphael\yarn.lock" />
+    <None Include="wwwroot\ProductView\fonts\ElegantIcons.svg" />
+    <None Include="wwwroot\ProductView\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\ProductView\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\ProductView\fonts\themify.svg" />
+    <None Include="wwwroot\ProductView\js\bootstrap.min.js" />
+    <None Include="wwwroot\ProductView\js\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\ProductView\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\ProductView\js\jquery-ui.min.js" />
+    <None Include="wwwroot\ProductView\js\jquery.countdown.min.js" />
+    <None Include="wwwroot\ProductView\js\jquery.dd.min.js" />
+    <None Include="wwwroot\ProductView\js\jquery.nice-select.min.js" />
+    <None Include="wwwroot\ProductView\js\jquery.slicknav.js" />
+    <None Include="wwwroot\ProductView\js\jquery.zoom.min.js" />
+    <None Include="wwwroot\ProductView\js\main.js" />
+    <None Include="wwwroot\ProductView\js\owl.carousel.min.js" />
+    <None Include="wwwroot\ProductView\Source\bootstrap-4.4.1-dist.zip" />
+    <None Include="wwwroot\ProductView\Source\elegant_font.zip" />
+    <None Include="wwwroot\ProductView\Source\font-awesome-4.7.0.zip" />
+    <None Include="wwwroot\ProductView\Source\jquery-nice-select-1.1.0.zip" />
+    <None Include="wwwroot\ProductView\Source\jquery-ui-1.12.1.zip" />
+    <None Include="wwwroot\ProductView\Source\jQuery.countdown-master.zip" />
+    <None Include="wwwroot\ProductView\Source\Magnific-Popup-master.zip" />
+    <None Include="wwwroot\ProductView\Source\OwlCarousel2-2.3.4.zip" />
+    <None Include="wwwroot\ProductView\Source\sass.zip" />
+    <None Include="wwwroot\ProductView\Source\SlickNav-master.zip" />
+    <None Include="wwwroot\ProductView\Source\themify-icons-font.zip" />
+    <None Include="wwwroot\ProductView\Source\zoom-master.zip" />
+    <None Include="wwwroot\ShoppingCartView\fonts\ElegantIcons.svg" />
+    <None Include="wwwroot\ShoppingCartView\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\ShoppingCartView\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\ShoppingCartView\fonts\themify.svg" />
+    <None Include="wwwroot\ShoppingCartView\js\bootstrap.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\handleCounter.js" />
+    <None Include="wwwroot\ShoppingCartView\js\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\jquery-ui.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\jquery.countdown.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\jquery.dd.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\jquery.nice-select.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\jquery.slicknav.js" />
+    <None Include="wwwroot\ShoppingCartView\js\jquery.zoom.min.js" />
+    <None Include="wwwroot\ShoppingCartView\js\main.js" />
+    <None Include="wwwroot\ShoppingCartView\js\owl.carousel.min.js" />
   </ItemGroup>
 
   <ItemGroup>
