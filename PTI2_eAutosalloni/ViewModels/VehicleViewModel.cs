@@ -25,6 +25,7 @@ namespace PTI2_eAutosalloni.ViewModels
         public double Price { get; set; }
         public int Bought { get; set; }
         public int Quantity { get; set; }
+        public IFormFile DefaultPhoto { get; set; }
         public List<IFormFile> Images { get; set; }
     }
 }

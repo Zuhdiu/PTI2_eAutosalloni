@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PTI2_eAutosalloni.Data;
+using PTI2_eAutosalloni.Data.Cart;
 using PTI2_eAutosalloni.Interfaces.Repositories;
 using PTI2_eAutosalloni.Interfaces.Services;
 using PTI2_eAutosalloni.Repositories;
@@ -52,7 +53,9 @@ namespace PTI2_eAutosalloni
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient<IVehicleImageRepository, VehicleImageRepository>();
             services.AddTransient<IVehicleImageService, VehicleImageService>();
-          
+            services.AddTransient(sc => ShoppingCart.GetShoppingCart(sc));
+            services.AddSession();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,6 +76,7 @@ namespace PTI2_eAutosalloni
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthentication();
             app.UseAuthorization();

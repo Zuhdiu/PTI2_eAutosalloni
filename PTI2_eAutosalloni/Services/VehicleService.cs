@@ -26,8 +26,16 @@ namespace PTI2_eAutosalloni.Services
         public async Task<Vehicle> Create(VehicleViewModel model)
         {
             Vehicle vehicle = _mapper.Map<Vehicle>(model);
-            // vehicle.AddedDate = DateTime.Now;
+            vehicle.AddedDate = DateTime.Now;
+            byte[] pictureBytes = null;
 
+            using (var stream = new MemoryStream())
+            {
+                await model.DefaultPhoto.CopyToAsync(stream);
+                pictureBytes = stream.ToArray();
+
+                vehicle.DefaultImage = pictureBytes;
+            }
             var result = await _vehicleRepository.Create(vehicle);
 
             VehicleImageViewModel productImageModel = new VehicleImageViewModel
@@ -39,17 +47,26 @@ namespace PTI2_eAutosalloni.Services
             return result;
         }
 
-        public async Task<bool> Update(VehicleImageViewModel model)
+        public async Task<bool> Update(VehicleViewModel model)
         {
             // product.AddedDate = DateTime.Now;
 
             Vehicle vehicle = new Vehicle();
+            byte[] pictureBytes = null;
+
+            using (var stream = new MemoryStream())
+            {
+                await model.DefaultPhoto.CopyToAsync(stream);
+                pictureBytes = stream.ToArray();
+
+                vehicle.DefaultImage = pictureBytes;
+            }
 
             var result = await _vehicleRepository.Update(vehicle);
 
             VehicleImageViewModel productImageModel = new VehicleImageViewModel
             {
-                VehicleID = model.VehicleID,
+                VehicleID = model.Id,
                 Images = model.Images
             };
             await _vehicleImageService.Update(productImageModel);
