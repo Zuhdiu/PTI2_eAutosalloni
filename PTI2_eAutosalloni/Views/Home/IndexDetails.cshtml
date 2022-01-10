@@ -1,5 +1,10 @@
 ﻿@model Vehicle
 
+@{
+    ViewData["Title"] = "VehicleDetails";
+    List<VehicleImage> Images = (List<VehicleImage>)ViewBag.VehicleImages;
+}
+
 <head>
 
     <meta charset="utf-8">
@@ -18,8 +23,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-content">
-                        <h4><del>$11999.00</del> <strong class="text-primary">$11779.00</strong></h4>
-                        <h2>Lorem ipsum dolor sit amet</h2>
+                        <h4><del>€ @(Convert.ToDecimal(Model.Price*1.25).ToString("#,##0.00"))</del>&nbsp; <strong class="text-primary"> € @(Convert.ToDecimal(Model.Price).ToString("#,##0.00"))</strong></h4>
+                        <h2>Get your new car!</h2>
                     </div>
                 </div>
             </div>
@@ -36,6 +41,22 @@
                             string photo = string.Format("data:image/gif;base64,{0}", encoded);
                         }
                         <img src="@photo" alt="" class="img-fluid wc-image">
+                    </div>
+                    @{var numId = 1; }
+                    <div class="img-select">
+
+                        @foreach (var image in Images)
+                        {
+                            string encode = Convert.ToBase64String(image.VehicleImg);
+                            string photos = string.Format("data:image/gif;base64,{0}", encode);
+                            ++numId;
+
+                            <div class="img-item">
+                                <a href="#" data-id="@numId">
+                                    <img class="product-pic" src="@photo" alt="product image" />
+                                </a>
+                            </div>
+                        }
                     </div>
                     <br>
                     <div class="row">
@@ -102,7 +123,7 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Category</span>
 
-                                    <strong class="pull-right">@Model.Category</strong>
+                                    <strong class="pull-right">@Model.Category.Name</strong>
                                 </div>
                             </li>
 
@@ -171,7 +192,7 @@
 
                             </li>
                             <li class="list-group-item">
-                                <div class="product-action-2">                      
+                                <div class="product-action-2">
                                     <a asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id" title="Add to cart">Add to cart</a>
                                 </div>
                             </li>
@@ -261,7 +282,7 @@
     </div>
 
     <!-- Modal -->
-    <div  @*class="modal fade"*@ id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div @*class="modal fade"*@ id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">

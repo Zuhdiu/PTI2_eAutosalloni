@@ -153,9 +153,9 @@
                                         string encoded = Convert.ToBase64String(item.DefaultImage);
                                         string photo = string.Format("data:image/gif;base64,{0}", encoded);
                                     }
-                                    <a asp-route-Id="@item.Id" asp-action="IndexDetails"><img src="@photo" alt=""></a>
+                                    <a asp-area="" asp-controller="Home" asp-route-Id="@item.Id" asp-action="IndexDetails"><img src="@photo" alt=""></a>
                                     <div class="down-content">
-                                        <a asp-route-Id="@item.Id" asp-action="IndexDetails"><h4>@item.Model</h4></a>
+                                        <a asp-area="" asp-controller="Home" asp-route-Id="@item.Id" asp-action="IndexDetails"><h4>@item.Model</h4></a>
 
                                         <h6><small><del>€ @(Convert.ToDecimal(item.Price*1.25).ToString("#,##0.00"))</del></small> &nbsp; € @(Convert.ToDecimal(item.Price).ToString("#,##0.00"))</h6>
 
