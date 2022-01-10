@@ -92,17 +92,17 @@
 
                             <li class="list-group-item">
                                 <div class="clearfix">
-                                    <span class="pull-left">Make</span>
+                                    <span class="pull-left">Brand</span>
 
-                                    <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                                    <strong class="pull-right">@Model.Brand</strong>
                                 </div>
                             </li>
 
                             <li class="list-group-item">
                                 <div class="clearfix">
-                                    <span class="pull-left"> Model</span>
+                                    <span class="pull-left">Category</span>
 
-                                    <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                                    <strong class="pull-right">@Model.Category</strong>
                                 </div>
                             </li>
 
@@ -110,7 +110,7 @@
                                 <div class="clearfix">
                                     <span class="pull-left">First registration</span>
 
-                                    <strong class="pull-right">05/2010</strong>
+                                    <strong class="pull-right">@(Model.Year.ToString("dd/MM/yyyy"))</strong>
                                 </div>
                             </li>
 
@@ -118,7 +118,7 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Mileage</span>
 
-                                    <strong class="pull-right">5000 km</strong>
+                                    <strong class="pull-right">0 km</strong>
                                 </div>
                             </li>
 
@@ -134,24 +134,15 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Engine size</span>
 
-                                    <strong class="pull-right">1800 cc</strong>
+                                    <strong class="pull-right">@(Double.Parse(Model.Engine.Substring(0, 3)))</strong>
                                 </div>
                             </li>
-
-                            <li class="list-group-item">
-                                <div class="clearfix">
-                                    <span class="pull-left">Power</span>
-
-                                    <strong class="pull-right">85 hp</strong>
-                                </div>
-                            </li>
-
 
                             <li class="list-group-item">
                                 <div class="clearfix">
                                     <span class="pull-left">Gearbox</span>
 
-                                    <strong class="pull-right">Manual</strong>
+                                    <strong class="pull-right">@Model.TransmissionType</strong>
                                 </div>
                             </li>
 
@@ -167,7 +158,7 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Doors</span>
 
-                                    <strong class="pull-right">2/3</strong>
+                                    <strong class="pull-right">4/5</strong>
                                 </div>
                             </li>
 
@@ -175,9 +166,12 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Color</span>
 
-                                    <strong class="pull-right">Black</strong>
+                                    <strong class="pull-right">@Model.Color</strong>
                                 </div>
-                                <div class="product-action-2">
+
+                            </li>
+                            <li class="list-group-item">
+                                <div class="product-action-2">                      
                                     <a asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id" title="Add to cart">Add to cart</a>
                                 </div>
                             </li>
