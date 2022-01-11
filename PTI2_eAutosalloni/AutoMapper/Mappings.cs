@@ -12,6 +12,8 @@ namespace PTI2_eAutosalloni.AutoMapper
     {
         public Mappings()
         {
+            CreateMap<Category, CategoryViewModel>().ReverseMap();
+
             CreateMap<Vehicle, VehicleViewModel>().ReverseMap();
         }
     }

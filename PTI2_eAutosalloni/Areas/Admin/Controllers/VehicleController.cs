@@ -77,7 +77,8 @@ namespace PTI2_eAutosalloni.Areas.Admin.Controllers
 
             if(product != null)
             {
-                return View(product);
+                VehicleViewModel model = _mapper.Map<VehicleViewModel>(product);
+                return View(model);
             }
             else
             {
