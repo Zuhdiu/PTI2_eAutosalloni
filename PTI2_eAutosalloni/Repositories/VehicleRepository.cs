@@ -32,7 +32,7 @@ namespace PTI2_eAutosalloni.Repositories
 
         public async Task<List<Vehicle>> FindAll()
         {
-            return await context.Vehicles.Include(x => x.Category).Include(x => x.Brand).ToListAsync();
+            return await context.Vehicles.Include(x => x.Category).Include(x=> x.Brand).ToListAsync();
         }
 
         public async Task<List<Vehicle>> FindByCategory(int CategoryId)
