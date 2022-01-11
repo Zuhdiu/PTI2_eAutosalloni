@@ -40,64 +40,25 @@
                             string encoded = Convert.ToBase64String(Model.DefaultImage);
                             string photo = string.Format("data:image/gif;base64,{0}", encoded);
                         }
-                        <img src="@photo" alt="" class="img-fluid wc-image">
+                        <img  style="width: 100%" src="@photo" alt="" class="img-fluid wc-image">
                     </div>
-                    @{var numId = 1; }
-                    <div class="img-select">
-
+                    <br>
+                    <div class="row" style="display:flex;flex-wrap:wrap">
                         @foreach (var image in Images)
                         {
-                            string encode = Convert.ToBase64String(image.VehicleImg);
-                            string photos = string.Format("data:image/gif;base64,{0}", encode);
-                            ++numId;
-
-                            <div class="img-item">
-                                <a href="#" data-id="@numId">
-                                    <img class="product-pic" src="@photo" alt="product image" />
-                                </a>
+                            <div class="" style="margin:0 10px">
+                                <div>
+                                    @{
+                                        string encoded1 = Convert.ToBase64String(image.VehicleImg);
+                                        string photo1 = string.Format("data:image/gif;base64,{0}", encoded1);
+                                    }
+                                    <img style="width:350px;" src="@photo1" alt="" class="img-fluid">
+                                </div>
+                                <br>
                             </div>
                         }
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-2-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-3-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
 
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-4-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-5-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-6-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="col-md-6">
@@ -223,58 +184,6 @@
 
                     <div class="left-content">
                         <p>- ABS <br>-Leather seats <br>-Power Assisted Steering <br>-Electric heated seats <br>-New HU and AU <br>-Xenon headlights</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="section-heading">
-                        <h2>Contact Details</h2>
-                    </div>
-
-                    <div class="left-content">
-                        <p>
-                            <span>Name</span>
-
-                            <br>
-
-                            <strong>John Smith</strong>
-                        </p>
-
-                        <p>
-                            <span>Phone</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="tel:123-456-789">123-456-789</a>
-                            </strong>
-                        </p>
-
-                        <p>
-                            <span>Mobile phone</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="tel:456789123">456789123</a>
-                            </strong>
-                        </p>
-
-                        <p>
-                            <span>Email</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="mailto:john@carsales.com">john@carsales.com</a>
-                            </strong>
-                        </p>
                     </div>
                 </div>
             </div>
