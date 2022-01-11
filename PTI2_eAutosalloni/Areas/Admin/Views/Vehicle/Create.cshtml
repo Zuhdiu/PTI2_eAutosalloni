@@ -24,36 +24,36 @@
                 </div>
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="wrap-input2 validate-input" data-validate="Model is required">
-                    <input asp-for="@Model.Model" class="input2" placeholder="Model">
-                    <span class="focus-input2" data-placeholder="Name">Vehicle Model</span>
+                    <input asp-for="@Model.Model" class="input2" >
+                    <span class="focus-input2" data-placeholder="Name"></span>
                 </div>
                 <div class="wrap-input2 validate-input">
                     <textarea asp-for="@Model.Description" class="input2"></textarea>
-                    <span class="focus-input2" data-placeholder="Description">Description</span>
+                    <span class="focus-input2" data-placeholder="Description"></span>
                 </div>
                 <div class="wrap-input2 validate-input" data-validate="Price is required">
                     <input asp-for="@Model.Price" class="input2">
-                    <span class="focus-input2" data-placeholder="Price">Price</span>
+                    <span class="focus-input2" data-placeholder="Price"></span>
                 </div>
                 <div class="wrap-input2 validate-input" data-validate="Quantity is required">
                     <input asp-for="@Model.Quantity" class="input2">
-                    <span class="focus-input2" data-placeholder="Quantity">Quantity</span>
+                    <span class="focus-input2" data-placeholder="Quantity"></span>
                 </div>
                 <div class="wrap-input2 validate-input" data-validate="Engine is required">
                     <input asp-for="@Model.Engine" class="input2">
-                    <span class="focus-input2" data-placeholder="Engine">Engine</span>
+                    <span class="focus-input2" data-placeholder="Engine"></span>
                 </div>
                 <div class="wrap-input2 validate-input" data-validate="Color is required">
                     <input asp-for="@Model.Color" class="input2">
-                    <span class="focus-input2" data-placeholder="Color">Color</span>
+                    <span class="focus-input2" data-placeholder="Color"></span>
                 </div>
                 <div class="wrap-input2 validate-input" data-validate="Year is required">
                     <input asp-for="@Model.Year" class="input2">
-                    <span class="focus-input2" data-placeholder="Year">Year</span>
+                    <span class="focus-input2" data-placeholder="Year"></span>
                 </div>
                 <div class="wrap-input2 validate-input" data-validate="Transmission is required">
                     <input asp-for="@Model.TransmissionType" class="input2">
-                    <span class="focus-input2" data-placeholder="Transmission">Transmission</span>
+                    <span class="focus-input2" data-placeholder="Transmission"></span>
                 </div>
                 <div class="wrap-input2 validate-input">
                     <select asp-for="@Model.BrandId" asp-items="@Brands" class="form-control" required>
