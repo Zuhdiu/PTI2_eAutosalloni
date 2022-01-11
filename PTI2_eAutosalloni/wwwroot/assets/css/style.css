@@ -271,6 +271,7 @@ header .navbar {
 	background-image: none;
 }
 .navbar .navbar-toggler {
+	border:none;
 	border-color: #fff;
 	background-color: #fff;	
 	height: 36px;
@@ -410,6 +411,13 @@ header .navbar {
 .product-item img {
 	width: 100%;
 	overflow: hidden;
+}
+
+.product-item a div {
+	height: 15rem;
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
 }
 
 .product-item .down-content h4 {

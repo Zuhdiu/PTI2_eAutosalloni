@@ -1,5 +1,10 @@
 ﻿@model Vehicle
 
+@{
+    ViewData["Title"] = "VehicleDetails";
+    List<VehicleImage> Images = (List<VehicleImage>)ViewBag.VehicleImages;
+}
+
 <head>
 
     <meta charset="utf-8">
@@ -18,8 +23,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-content">
-                        <h4><del>$11999.00</del> <strong class="text-primary">$11779.00</strong></h4>
-                        <h2>Lorem ipsum dolor sit amet</h2>
+                        <h4><del>€ @(Convert.ToDecimal(Model.Price*1.25).ToString("#,##0.00"))</del>&nbsp; <strong class="text-primary"> € @(Convert.ToDecimal(Model.Price).ToString("#,##0.00"))</strong></h4>
+                        <h2>Get your new car!</h2>
                     </div>
                 </div>
             </div>
@@ -35,48 +40,25 @@
                             string encoded = Convert.ToBase64String(Model.DefaultImage);
                             string photo = string.Format("data:image/gif;base64,{0}", encoded);
                         }
-                        <img src="@photo" alt="" class="img-fluid wc-image">
+                        <img  style="width: 100%" src="@photo" alt="" class="img-fluid wc-image">
                     </div>
                     <br>
-                    <div class="row">
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid">
+                    <div class="row" style="display:flex;flex-wrap:wrap">
+                        @foreach (var image in Images)
+                        {
+                            <div class="" style="margin:0 10px">
+                                <div>
+                                    @{
+                                        string encoded1 = Convert.ToBase64String(image.VehicleImg);
+                                        string photo1 = string.Format("data:image/gif;base64,{0}", encoded1);
+                                    }
+                                    <img style="width:350px;" src="@photo1" alt="" class="img-fluid">
+                                </div>
+                                <br>
                             </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-2-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-3-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-4-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-5-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div>
-                                <img src="assets/images/product-6-370x270.jpg" alt="" class="img-fluid">
-                            </div>
-                            <br>
-                        </div>
+                        }
                     </div>
+
                 </div>
 
                 <div class="col-md-6">
@@ -92,17 +74,17 @@
 
                             <li class="list-group-item">
                                 <div class="clearfix">
-                                    <span class="pull-left">Make</span>
+                                    <span class="pull-left">Brand</span>
 
-                                    <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                                    <strong class="pull-right">@Model.Brand</strong>
                                 </div>
                             </li>
 
                             <li class="list-group-item">
                                 <div class="clearfix">
-                                    <span class="pull-left"> Model</span>
+                                    <span class="pull-left">Category</span>
 
-                                    <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                                    <strong class="pull-right">@Model.Category.Name</strong>
                                 </div>
                             </li>
 
@@ -110,7 +92,7 @@
                                 <div class="clearfix">
                                     <span class="pull-left">First registration</span>
 
-                                    <strong class="pull-right">05/2010</strong>
+                                    <strong class="pull-right">@(Model.Year.ToString("dd/MM/yyyy"))</strong>
                                 </div>
                             </li>
 
@@ -118,7 +100,7 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Mileage</span>
 
-                                    <strong class="pull-right">5000 km</strong>
+                                    <strong class="pull-right">0 km</strong>
                                 </div>
                             </li>
 
@@ -134,24 +116,15 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Engine size</span>
 
-                                    <strong class="pull-right">1800 cc</strong>
+                                    <strong class="pull-right">@(Double.Parse(Model.Engine.Substring(0, 3)))</strong>
                                 </div>
                             </li>
-
-                            <li class="list-group-item">
-                                <div class="clearfix">
-                                    <span class="pull-left">Power</span>
-
-                                    <strong class="pull-right">85 hp</strong>
-                                </div>
-                            </li>
-
 
                             <li class="list-group-item">
                                 <div class="clearfix">
                                     <span class="pull-left">Gearbox</span>
 
-                                    <strong class="pull-right">Manual</strong>
+                                    <strong class="pull-right">@Model.TransmissionType</strong>
                                 </div>
                             </li>
 
@@ -167,7 +140,7 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Doors</span>
 
-                                    <strong class="pull-right">2/3</strong>
+                                    <strong class="pull-right">4/5</strong>
                                 </div>
                             </li>
 
@@ -175,8 +148,11 @@
                                 <div class="clearfix">
                                     <span class="pull-left">Color</span>
 
-                                    <strong class="pull-right">Black</strong>
+                                    <strong class="pull-right">@Model.Color</strong>
                                 </div>
+
+                            </li>
+                            <li class="list-group-item">
                                 <div class="product-action-2">
                                     <a asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id" title="Add to cart">Add to cart</a>
                                 </div>
@@ -214,60 +190,8 @@
         </div>
     </div>
 
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="section-heading">
-                        <h2>Contact Details</h2>
-                    </div>
-
-                    <div class="left-content">
-                        <p>
-                            <span>Name</span>
-
-                            <br>
-
-                            <strong>John Smith</strong>
-                        </p>
-
-                        <p>
-                            <span>Phone</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="tel:123-456-789">123-456-789</a>
-                            </strong>
-                        </p>
-
-                        <p>
-                            <span>Mobile phone</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="tel:456789123">456789123</a>
-                            </strong>
-                        </p>
-
-                        <p>
-                            <span>Email</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="mailto:john@carsales.com">john@carsales.com</a>
-                            </strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal -->
-    <div  @*class="modal fade"*@ id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div @*class="modal fade"*@ id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
