@@ -42,7 +42,7 @@ namespace PTI2_eAutosalloni.Repositories
 
         public async Task<Vehicle> FindById(int Id)
         {
-            return await context.Vehicles.Include(x => x.Category).Where(x => x.Id == Id).FirstOrDefaultAsync();
+            return await context.Vehicles.Include(x => x.Category).Include(x => x.Brand).Where(x => x.Id == Id).FirstOrDefaultAsync();
         }
 
         public bool isExists(int Id)

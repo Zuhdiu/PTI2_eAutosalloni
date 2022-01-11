@@ -57,19 +57,19 @@
                     <div class="row">
                         @foreach (var item in Model)
                         {
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-md-6">
                                 <div class="product-item">
                                     @{
                                         string encoded = Convert.ToBase64String(item.DefaultImage);
                                         string photo = string.Format("data:image/gif;base64,{0}", encoded);
                                     }
-                                    <a asp-area="" asp-controller="Home" asp-route-Id="@item.Id" asp-action="IndexDetails"><img src="@photo" alt=""></a>
+                                    <a asp-area="" asp-controller="Home" asp-route-Id="@item.Id" asp-action="IndexDetails"><div style="background-image:url(@photo);height:300px;background-position:center;background-size:contain;background-repeat:no-repeat"></div></a>
                                     <div class="down-content">
-                                        <a asp-area="" asp-controller="Home" asp-route-Id="@item.Id" asp-action="IndexDetails"><h4>@item.Model</h4></a>
+                                        <a asp-area="" asp-controller="Home" asp-route-Id="@item.Id" asp-action="IndexDetails"><h4>@item.Brand.Name @item.Model</h4></a>
 
-                                        <h6><small><del>€ @(Convert.ToDecimal(item.Price*1.25).ToString("#,##0.00"))</del></small> &nbsp; € @(Convert.ToDecimal(item.Price).ToString("#,##0.00"))</h6>
+                                        <h6><small><del>€@(Convert.ToDecimal(item.Price*1.25).ToString("#,##0.00"))</del></small> &nbsp; €@(Convert.ToDecimal(item.Price).ToString("#,##0.00"))</h6>
 
-                                        <p>@item.Engine &nbsp;/&nbsp; @item.Category &nbsp;/&nbsp; @(item.Year.ToString("dd/MM/yyyy")) &nbsp;/&nbsp; New vehicle</p>
+                                        <p>@item.Engine &nbsp;/&nbsp; @item.Category.Name &nbsp;/&nbsp; @(item.Year.ToString("dd/MM/yyyy")) &nbsp;/&nbsp; New vehicle</p>
 
                                         <small>
                                             <strong title="Author"><i class="fa fa-dashboard"></i> 0km</strong> &nbsp;&nbsp;&nbsp;&nbsp;

@@ -42,7 +42,7 @@ namespace PTI2_eAutosalloni.Controllers
             ViewData["GetPunetor"] = search;
 
             var punetor = from x in _context.Vehicles select x;
-            //punetor = _context.Vehicles.Include(p => p.Category);
+            punetor = _context.Vehicles.Include(p => p.Category).Include(p => p.Brand);
 
             if (!String.IsNullOrEmpty(search) || !String.IsNullOrEmpty(price) || !String.IsNullOrEmpty(category) || !String.IsNullOrEmpty(brand) || !String.IsNullOrEmpty(engine)) 
             {
