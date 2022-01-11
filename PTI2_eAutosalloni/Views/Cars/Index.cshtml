@@ -21,124 +21,34 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="contact-form">
-                        <form class="d-flex" method="get" asp-action="Index">
-                            @Html.DropDownList("search", (SelectList)ViewBag.Emertimi, "-- All --")
-                            @Html.DropDownList("price", (SelectList)ViewBag.Cmimi, "-- All --")
+                        @*<form class="d-flex" method="get" asp-action="Index">
+                           
+                           
                             <input type="submit" class="btn btn-primary" value="Search" style="margin-left:10px;">
-                        </form>
-                        <form action="#">
-                            <label>Used/New:</label>
-
-                            <select class="form-control">
-                                <option value="">All</option>
-                                <option value="new">New vehicle</option>
-                                <option value="used">Used vehicle</option>
-                            </select>
-
-                            <label>Vehicle Type:</label>
-
-                            <select class="form-control">
-                                <option value="">--All --</option>
-                                <option value="">--All --</option>
-                                <option value="">--All --</option>
-                                <option value="">--All --</option>
-                                <option value="">--All --</option>
-                            </select>
-
-                            <label>Make:</label>
-
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
-
+                        </form>*@
+                        <form method="get" asp-action="Index">
                             <label>Model:</label>
 
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
+                            @Html.DropDownList("search", (SelectList)ViewBag.Emertimi, "-- All --")
 
                             <label>Price:</label>
 
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
+                            @Html.DropDownList("price", (SelectList)ViewBag.Cmimi, "-- All --")
 
-                            <label>Mileage:</label>
+                            <label>Category:</label>
 
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
+                            @Html.DropDownList("category", (SelectList)ViewBag.Kategoria, "-- All --")
 
-                            <label>Engine size:</label>
+                            <label>Brand:</label>
 
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
 
-                            <label>Power:</label>
+                            @Html.DropDownList("brand", (SelectList)ViewBag.Brandi, "-- All --")
 
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
+                            <label>Engine:</label>
 
-                            <label>Fuel:</label>
+                            @Html.DropDownList("engine", (SelectList)ViewBag.Motorri, "-- All --")
 
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
-
-                            <label>Gearbox:</label>
-
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
-
-                            <label>Doors:</label>
-
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
-
-                            <label>Number of seats:</label>
-
-                            <select class="form-control">
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                                <option value="">-- All --</option>
-                            </select>
-
-                            <button type="submit" class="filled-button btn-block">Search</button>
+                            <button type="submit" class="filled-button btn-block" value="Search">Search</button>
                         </form>
                     </div>
                 </div>

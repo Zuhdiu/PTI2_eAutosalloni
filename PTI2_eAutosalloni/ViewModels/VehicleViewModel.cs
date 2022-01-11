@@ -14,9 +14,9 @@ namespace PTI2_eAutosalloni.ViewModels
         public int Id { get; set; }
         public string Model { get; set; }
         public int CategoryId { get; set; }
-        public SelectListItem Category { get; set; }
+        public SelectListItem Categories { get; set; }
         public int BrandId { get; set; }
-        public SelectListItem Brand { get; set; }
+        public SelectListItem Brands { get; set; }
         public string Description { get; set; }
         public string Engine { get; set; }
         public string Color { get; set; }
