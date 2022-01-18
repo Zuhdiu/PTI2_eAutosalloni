@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PTI2_eAutosalloni.Data;
+using PTI2_eAutosalloni.Data.Cart;
 using PTI2_eAutosalloni.Interfaces.Repositories;
 using PTI2_eAutosalloni.Interfaces.Services;
 using PTI2_eAutosalloni.Repositories;
@@ -39,8 +41,21 @@ namespace PTI2_eAutosalloni
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+            services.AddRazorPages();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IBrandRepository, BrandRepository>();
+            services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<IVehicleRepository, VehicleRepository>();
+            services.AddTransient<IVehicleService, VehicleService>();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddTransient<IVehicleImageRepository, VehicleImageRepository>();
+            services.AddTransient<IVehicleImageService, VehicleImageService>();
+            services.AddTransient(sc => ShoppingCart.GetShoppingCart(sc));
+            services.AddSession();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +76,7 @@ namespace PTI2_eAutosalloni
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthentication();
             app.UseAuthorization();
